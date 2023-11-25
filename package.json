@@ -1,0 +1,15 @@
+{
+  "name": "golang-form-services",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tidy-dev": "npm run tidy && npm run dev",
+    "tidy": "go mod tidy",
+    "dev": "go run main.go",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
