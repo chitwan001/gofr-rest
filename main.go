@@ -4,14 +4,14 @@ import (
 	"context"
 	"github.com/golang-jwt/jwt"
 	"gofr.dev/pkg/gofr"
-	"golang-form-services/userRoutes"
+	"golang-rest/userRoutes"
 	"net/http"
 	"strings"
 )
 
 func baseHandler(ctx *gofr.Context) (interface{}, error) {
 	resp := make(map[string]string)
-	resp["message"] = "Status Created"
+	resp["message"] = "Server up!"
 	return resp, nil
 }
 
@@ -87,6 +87,7 @@ func main() {
 	app.POST("/user/create", userRoutes.RegisterUser)
 	app.POST("/user/login", userRoutes.LoginUser)
 	app.GET("/user/me", userRoutes.Me)
+	app.DELETE("/user/delete", userRoutes.DeleteUser)
 
 	// Starts the server, it will listen on the default port 8000.
 	// it can be over-ridden through configs

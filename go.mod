@@ -1,4 +1,4 @@
-module golang-form-services
+module golang-rest
 
 go 1.21
 

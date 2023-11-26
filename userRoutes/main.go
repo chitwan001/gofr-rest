@@ -206,3 +206,13 @@ func Me(ctx *gofr.Context) (interface{}, error) {
 
 	return response, nil
 }
+
+func DeleteUser(ctx *gofr.Context) (interface{}, error) {
+	email := ctx.Value("userEmail")
+	_, err := ctx.DB().ExecContext(ctx, "DELETE FROM users WHERE email=?", email)
+	if err != nil {
+		return nil, err
+	}
+	//as delete request must not return anything but 204 No Content
+	return nil, nil
+}
